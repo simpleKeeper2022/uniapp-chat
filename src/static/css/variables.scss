@@ -1,0 +1,103 @@
+$contentBg: #ffffff;
+$contentPd: 16px;
+$activeColor: #1989fa;
+$blockBorderRadius: 12px;
+$inlineBlockBorderRadius: 2px;
+$formContentPd: 24px;
+
+// font-size
+$defaultFontSize: 14px;
+$largeFontSize: 16px;
+$largerFontSize: 18px;
+
+// black Font
+$defaultFontColor: rgba(0, 0, 0, 0.65);
+$grayFontColor: rgba(0, 0, 0, 0.45);
+$dakerFontColor: rgba(0, 0, 0, 0.85);
+
+// sidebar
+$menuText: #84888f;
+$menuActiveText: #1989fa;
+$subMenuActiveText: #1989fa;
+
+$menuBg: #f0f7ff;
+$menuHover: #e3efff;
+$menuActiveBg: #e3efff;
+
+$subMenuBg: #e3efff;
+$subMenuHover: #e3efff;
+$subMenuActiveBg: #ffffff;
+
+$sideBarWidth: 250px;
+$menuHover: #e3efff;
+
+// header
+$headerHeight: 72px;
+$headerBg: #1989fa;
+
+// breadcrumb
+$breadcrumbH: 54px;
+$breadcrumbColor: $grayFontColor;
+$breadcrumbActiveColor: $defaultFontColor;
+$breadcrumbBg: #ffffff;
+
+// container
+$containerBg: #f9fafc;
+$containerPd: 16px;
+
+// SearchContainer
+$searchContainerBg: #ffffff;
+$searchContainerPd: 24px;
+$searchFormLabelColor: $dakerFontColor;
+
+// button
+$buttonH: 32px;
+$buttonBg: #ffffff;
+$buttonBorder: 1px solid #d9d9d9;
+$buttonColor: #5c5c5c;
+$buttonActiveColor: #1989fa;
+$buttonGroupMr: 8px;
+
+$buttonPrimaryBg: #1989fa;
+$buttonPrimaryBorder: 1px solid #1989fa;
+$buttonPrimaryColor: #ffffff;
+
+// plain button
+$plainButtonBg: #f0f5ff;
+$plainButtonBorder: 1px solid #b3caff;
+$plainButtonColor: #1989fa;
+
+// table container
+$tableContainerBg: #ffffff;
+$tableContainerPd: 24px;
+$tableHeaderBg: #ededee;
+$tableHeaderColor: $dakerFontColor;
+$tableContentColor: $defaultFontColor;
+
+// tab container
+$tabContainerBg: #ffffff;
+
+// dialog, message-box
+$dialogHeaderHeight: 54px;
+$dialogBlockBorder: 1px solid #f3f3f3;
+$dialogContentLineHeight: 1.5;
+$dialogFooterHeight: 80px;
+
+// the :export directive is the magic sauce for webpack
+// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
+:export {
+    menuText: $menuText;
+    menuActiveText: $menuActiveText;
+    subMenuActiveText: $subMenuActiveText;
+    menuBg: $menuBg;
+    menuHover: $menuHover;
+    menuActiveBg: $menuActiveBg;
+    subMenuBg: $subMenuBg;
+    subMenuHover: $subMenuHover;
+    subMenuActiveBg: $subMenuActiveBg;
+    sideBarWidth: $sideBarWidth;
+}
+
+// 机器人样式
+$chatbotContentPadding: 12px 12px;
+$chatbotBorderRadius: 8px;

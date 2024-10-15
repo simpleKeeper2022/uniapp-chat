@@ -1,0 +1,454 @@
+@import './variables.scss'; // 引入css变量
+
+// 评价和核身公共样式
+.system-content {
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px 4px;
+  background-color: white;
+  border-radius: $chatbotBorderRadius;
+  .title {
+    text-align: center;
+    color: #000;
+  }
+}
+// 提交按钮
+.sub-con {
+  display: flex;
+  justify-content: center;
+  button {
+    width: 80%;
+  }
+}
+// 选择评价和未解决的样式
+div.bt-con {
+  overflow: hidden;
+  button {
+    float: left;
+    margin-left: 4%;
+    width: 44%;
+  }
+}
+
+// 消息内容公共样式
+.robot-chat-content {
+  // background-color: #f0f2f6;
+  // background-color: #f0f2f1;
+  background-color: #EDEDED ;
+  overflow-y: auto;
+  height: 100%;
+  padding:0 10px ;
+
+  // padding-bottom: 40px;
+  // padding-bottom: 90px;
+  user-select: text; // 规定是否能选取元素的文本
+
+  // 公共样式
+  .chat-detail-common {
+    position: relative;
+    line-height: 20px;
+    // margin-bottom: 12px;
+    display: inline-block;
+    word-break: break-all;
+    padding: $chatbotContentPadding;
+    // max-width: 240px;
+    // max-width: 252px;
+    max-width: 280px;
+    border-radius: $chatbotBorderRadius;
+    // background: $activeColor;
+    color: black;
+    background: #fff;
+    font-size: 15px;
+    text-align: left;
+  }
+  .commone-content {
+    img {
+      // height: 100%;
+      width: auto;
+      max-width: 100%;
+      // width:100px;
+      height: 100px;
+    }
+
+    .qa_label {
+      width: 252px;
+    }
+
+    ul li {
+      font-size: 15px;
+      border-top: 1px solid #ededee;
+      color: #407aff;
+      line-height: 44px;
+      cursor: pointer;
+      padding-left: 10px;
+      font-weight: 600;
+    }
+  }
+  .chat-detail-right {
+    @extend .chat-detail-common;
+    @extend .commone-content;
+    // color: #ffffff;
+    // background: $activeColor;
+    background: #C7D6FF;
+    color: #050C1C;
+    margin: 10px 5px 10px 0
+  }
+  .chat-quote-right {
+    @extend .chat-detail-common;
+    @extend .commone-content;
+    color: #4d4d4dff;
+    background: #F6F7FAFF;
+    font-size: 12px;
+    margin: 5px 42px 5px 0;
+    display: flex;
+    align-items: flex-start;
+    padding-right: 0;
+    .opNickname{
+      white-space: nowrap;
+      // margin-top: 3px;
+    }
+    &>div{
+      display: -webkit-box !important;
+      flex: 1;
+      line-height: 20px;
+      overflow: hidden;
+      word-break: break-all;
+      text-overflow: ellipsis;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+
+    }
+  }
+
+  .chat-wallet-right {
+    @extend .chat-detail-common;
+    @extend .commone-content;
+    color: #ffffff;
+    margin-right: 10px;
+    font-size: 15px !important;
+    background: #0a59f7 !important;
+    border-radius: 16px 16px 0 16px !important;
+  }
+
+  .chat-detail-left {
+    @extend .chat-detail-common;
+    @extend .commone-content;
+    // border-top-left-radius: 0;
+    p {
+      white-space: pre-line;
+    }
+  }
+  .chat-wallet-left {
+    @extend .chat-detail-common;
+    @extend .commone-content;
+    background-color: #fff !important;
+    color: #050c1c !important;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 0.21333333rem;
+    border: none;
+    text-align: justify;
+    word-break: break-word;
+    word-wrap: break-word;
+    white-space: normal;
+    font-family: PingFangSC-Regular;
+    font-size: 15px !important;
+    border-radius: 16px 16px 16px 0 !important;
+    margin-left: 10px;
+    p {
+      white-space: pre-line;
+    }
+  }
+  // 图片展示
+  .robot-image {
+    @extend .chat-detail-common;
+    // max-height: 252px;
+    height: 120px;
+    img {
+      height: 100px;
+      width: auto;
+      max-width: 100%;
+    }
+  }
+
+  // 左侧消息
+  .chat-left {
+    display: flex;
+    justify-content: flex-start;
+    .robot-image {
+      border-top-left-radius: 0;
+    }
+  }
+  .releative{
+    margin-left: 5px;
+    margin-right: 5px;
+    position: relative;
+  }
+  // 右侧消息
+  .chat-right {
+    display: flex;
+    justify-content: flex-end;
+  }
+  // 头像
+  .head-con {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    flex-shrink: 0;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 6px;
+    }
+  }
+  // 系统消息
+  .system-center {
+    width: 90%;
+    text-align: center;
+    line-height: 24px;
+    color: #ccc;
+    margin: 0 auto;
+    // font-size: 12px;
+  }
+}
+
+.fixed-button-chatbot {
+  width: 100%;
+
+  position: absolute;
+  // bottom: 70px;
+  // 0617 改底部按钮
+  bottom: 55px;
+  left: 0;
+  background: #f0f2f1;
+  padding-top: 6px;
+  z-index: 9;
+}
+// 新增展示聊天消息时间
+.chat-time-right {
+  text-align: right;
+}
+// 无消息列表时展示
+.noContent {
+  text-align: center;
+  margin: 150px 0;
+}
+
+.status-con {
+  width: 24px;
+  height: 24px;
+  margin-top: 6px;
+}
+
+/* 上拉加载-无更多消息 */
+.msg-end {
+  padding: 20px 0;
+  font-size: 15px;
+  text-align: center;
+  color: #ff8095;
+}
+
+// 新增乐卡样式优化
+.leka {
+  ul li a {
+    color: #ff8000;
+  }
+}
+
+.tipcenter {
+  text-align: center;
+  margin: 3px 0 10px 0;
+  color: #ccc;
+  font-size: 14px;
+}
+
+.initErrorClass {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+.marginT70{
+  margin-top: 70px;
+  height: calc(100% - 70px) !important;
+}
+// 排队等候样式
+.waitQueue {
+  display: flex;
+  align-items: center;
+  // margin-top: 15px;
+  background: #f0f5ff;
+  padding: 10px 16px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 4px;
+  // position: fixed;
+  // left: 0;
+  // right: 0;
+  // top: 0;
+  border-bottom: 1px solid #eee;
+  .left {
+    flex: 1;
+    padding: 0 10px;
+    //   font-size: 14px;
+    //   font-weight: bold;
+    line-height: 16px;
+  }
+}
+
+.buygoods{
+  margin-top: 15px;
+  background: #f0f5ff;
+  padding: 10px 16px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 4px;
+  border-bottom: 1px solid #eee;
+}
+// 引用样式
+.quote-content {
+  background-color: white;
+  // border: 1px solid #e3dfdf;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 15px;
+  position: absolute;
+  bottom: 66px;
+  z-index: 600;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .content {
+    display: flex;
+    background: #f6f7faff;
+    padding: 5px 10px;
+    font-size: 12px;
+    color: #4d4d4dff;
+    width: 100%;
+    max-height: 60px;
+    & > span {
+      white-space: nowrap;
+      line-height: 25px;
+    }
+    .closequote {
+      margin-left: 20px;
+      margin-top: 10px;
+      color: rgba(0, 0, 0, 0.2);
+      font-size: 20px;
+    }
+
+    .text-span {
+      display: -webkit-box !important;
+      flex: 1;
+      line-height: 25px;
+      overflow: hidden;
+      word-break: break-all;
+      text-overflow: ellipsis;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      img{
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+.sendgood-div{
+  background-color: white;
+  border: 1px solid #e3dfdf;
+  border-radius: 10px;
+  width: calc(100% - 20px);
+  padding: 10px 15px;
+  position: absolute;
+  bottom: 63px;
+  z-index: 300;
+  left: 10px;
+
+}
+.endchat {
+  .van-dialog__message {
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .van-button__text {
+    font-weight: 600;
+  }
+}
+.beforedestory {
+  .van-dialog__header {
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .van-dialog__message {
+    color: rgba(69, 90, 100, 0.6);
+    font-size: 12px;
+  }
+  .van-button__text {
+    font-weight: 600;
+  }
+}
+.endbtnbg {
+  color: #050c1c !important;
+  background: #fff !important;
+  display: flex !important;
+  z-index: 100!important;
+  align-items: center;
+  .end-chat {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+  }
+}
+// 逾期专线
+.overdue {
+  position: fixed;
+  left: 0;
+  bottom: 70px;
+  margin-left: 12px;
+  margin-right: 0;
+  padding: 6px 12px;
+  font-size: 15px;
+  color: #fff;
+  border-radius: 6px;
+
+  background: #407aff;
+  cursor: pointer;
+  margin-bottom: 6px;
+  .van-icon {
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 2px;
+    font-size: 15px;
+  }
+  span {
+    text-decoration: none;
+  }
+}
+
+.left-triangle{
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 6px solid #fff;
+  left: -5px;
+  top: 15px;
+}
+.right-triangle{
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 6px solid #C7D6FF ;
+  right: 0px;
+  top: 20px;
+}
+.pr{
+  position: relative;
+}
